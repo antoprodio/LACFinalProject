@@ -1,0 +1,666 @@
+/*globalapplied to all */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.main {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* nav  */
+.top-nav {
+  padding: 20px 60px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.brand-name {
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  transition: opacity 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.nav-links a.selected {
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+
+/* headers */
+.main-header {
+  background: linear-gradient(135deg, #8B2635 0%, #A63446 50%, #8B2635 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-header {
+  min-height: auto;
+  padding-bottom: 0;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-text {
+  color: white;
+  text-align: center;
+  order: 2;
+  position: relative;
+  z-index: 2;
+}
+
+.main-heading {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 7rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.main-subheading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.cta-button {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 18px 80px;
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background: white;
+  color: #8B2635;
+}
+
+/* titles */
+.section-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #999;
+  margin: 30px auto 60px;
+}
+
+/* testimonials  */
+.testimonials-section,
+.awards-section {
+  padding: 120px 60px 120px;
+  background: #f5f5f5;
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  border: 1px solid #333;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 400px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 40px;
+  flex-grow: 1;
+  font-family: 'Georgia', serif;
+}
+
+.testimonial-author {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #333;
+  font-family: 'Georgia', serif;
+  margin-top: auto;
+}
+
+/* sevices page */
+.services-section {
+  padding: 80px 60px;
+  background: white;
+  min-height: 80vh;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: white;
+  border: 2px solid #ddd;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  border-color: #8B2635;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-card.expanded {
+  border-color: #8B2635;
+}
+
+.service-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 25px 30px;
+  margin: 0;
+  color: #333;
+  background: white;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-title {
+  color: #8B2635;
+}
+
+.extra-text {
+  padding: 0 30px 30px 30px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.extra-text.hidden {
+  display: none;
+}
+
+.extra-text.revealed {
+  display: block;
+}
+
+.extra-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+/* Faq */
+.faq-section {
+  padding: 80px 60px;
+  background: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-item {
+  background: white;
+  border: 2px solid #ddd;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: #8B2635;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  padding: 20px 30px;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #333;
+  font-family: 'Georgia', serif;
+}
+
+.faq-answer {
+  padding: 0 30px 20px 30px;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  font-family: 'Georgia', serif;
+}
+
+.faq-answer.hidden {
+  display: none;
+}
+
+.faq-answer.revealed {
+  display: block;
+}
+
+/* Contact  */
+.contact-section {
+  background: linear-gradient(135deg, #8B2635 0%, #A63446 50%, #8B2635 100%);
+  padding: 80px 60px 120px;
+  min-height: 100vh;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', 'Arial', sans-serif;
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 8px;
+}
+
+.contact-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: white;
+  margin: 20px auto 60px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.contact-form-column {
+  padding-right: 40px;
+}
+
+.form-heading {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+  font-family: 'Georgia', serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-input,
+.form-textarea {
+  background: rgba(139, 38, 53, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-family: 'Georgia', serif;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: white;
+  background: rgba(139, 38, 53, 0.9);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.form-submit {
+  background: white;
+  color: #8B2635;
+  border: none;
+  padding: 20px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.form-submit:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-column {
+  padding-left: 40px;
+}
+
+.info-heading {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 25px;
+  font-family: 'Georgia', serif;
+}
+
+.info-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  font-family: 'Georgia', serif;
+}
+
+.business-name {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: 'Georgia', serif;
+}
+
+.address,
+.phone {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+.phone {
+  margin-bottom: 50px;
+}
+
+.hours-heading {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-family: 'Georgia', serif;
+}
+
+.hours-text {
+  font-size: 1.1rem;
+  font-family: 'Georgia', serif;
+}
+
+.hours-text strong {
+  font-weight: 600;
+}
+
+/* logo and footer */
+.logo-container {
+  padding: 60px 0;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.bottom-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+}
+
+footer {
+  background: #2c2c2c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design prt. 1  */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 60px 50px;
+  }
+
+  .main-heading {
+    font-size: 5rem;
+  }
+
+  .testimonials-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .testimonials-section,
+  .awards-section {
+    padding: 100px 60px 100px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .service-image {
+    height: 250px;
+  }
+
+  .contact-container {
+    gap: 60px;
+  }
+
+  .contact-form-column,
+  .contact-info-column {
+    padding: 0;
+  }
+}
+
+/* Responsive Design prt. 2*/
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .main-heading {
+    font-size: 3.5rem;
+  }
+
+  .main-subheading {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 15px 60px;
+    font-size: 1rem;
+  }
+
+  .testimonials-section,
+  .awards-section {
+    padding: 80px 30px 80px;
+  }
+
+  .testimonials-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    padding: 40px 30px;
+    min-height: 350px;
+  }
+
+  .testimonial-author {
+    font-size: 1.5rem;
+  }
+
+  .services-section {
+    padding: 60px 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-image {
+    height: 200px;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+    padding: 20px;
+  }
+
+  .contact-section {
+    padding: 60px 30px 80px;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .form-heading,
+  .info-heading {
+    font-size: 1.6rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .business-name,
+  .hours-heading {
+    font-size: 1.5rem;
+  }
+}
